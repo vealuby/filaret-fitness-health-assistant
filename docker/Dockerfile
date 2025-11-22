@@ -16,5 +16,8 @@ RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir .
 COPY app ./app
 COPY docs ./docs
 
+# Создаем директорию для базы данных
+RUN mkdir -p /app/storage
+
 CMD ["python", "-m", "app.main"]
 
